@@ -1,11 +1,11 @@
 FROM python:3.8
 
-WORKDIR /code
+WORKDIR /project
 
 COPY . .
 
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
+ENV FLASK_ENV=development
 
-CMD ["flask", "run", "-h", "0.0.0.0", "-p", "80"]
+CMD ["gunicorn", "app:ap p", "-b", "0.0.0.0:8000"]
