@@ -5,11 +5,9 @@ from flask import Flask
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def get_index():
-    #
-    # В Flask можно создать самую простую страничку просто вернув строку
-    #
     return "<h1>Its index page</h1>"
 
 # key = Fernet.generate_key()
